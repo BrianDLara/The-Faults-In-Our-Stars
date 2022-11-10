@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
           isUserName: true
         }
       },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       firstName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -44,6 +48,14 @@ module.exports = (sequelize, DataTypes) => {
           model: 'ZodiacSign',
           key: 'id'
         }
+      },
+      phoneNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      gender: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
     {
