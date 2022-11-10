@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Review.belongsTo(models.User, {
-        foreignKey: 'userId',
-        as: 'user_review',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+      // Review.belongsTo(models.User, {
+      //   foreignKey: 'userId',
+      //   as: 'user_review',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
     }
   }
   Review.init(
@@ -34,11 +34,11 @@ module.exports = (sequelize, DataTypes) => {
       dislikes: DataTypes.INTEGER,
       zodiacId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'zodiacsigns',
-          key: 'id'
-        }
+        allowNull: false
+        // references: {
+        //   model: 'zodiacsigns',
+        //   key: 'id'
+        // }
       }
     },
     {
