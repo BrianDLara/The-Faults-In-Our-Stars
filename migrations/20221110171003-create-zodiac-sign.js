@@ -1,8 +1,9 @@
 'use strict'
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('zodiacSigns', {
+    await queryInterface.createTable('zodiacsigns', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -29,7 +30,6 @@ module.exports = {
     })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('zodiacSigns')
+    await queryInterface.dropTable('zodiacsigns')
   }
 }
-// pie

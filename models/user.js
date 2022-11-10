@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Review, { foreignKey: 'userId' })
+      User.hasOne(models.ZodiacSign, { foreignKey: 'userId' })
     }
   }
   User.init(
@@ -35,9 +37,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      zodaic: {
+      zodiacId: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'ZodiacSign',
+          key: 'id'
+        }
       }
     },
     {
