@@ -16,9 +16,24 @@ module.exports = (sequelize, DataTypes) => {
       rating: DataTypes.INTEGER,
       title: DataTypes.STRING,
       description: DataTypes.STRING,
-      userId: DataTypes.INTEGER,
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'User',
+          key: 'id'
+        }
+      },
       likes: DataTypes.INTEGER,
-      dislikes: DataTypes.INTEGER
+      dislikes: DataTypes.INTEGER,
+      zodiacId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'zodiacsigns',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,

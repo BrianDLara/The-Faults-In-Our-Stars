@@ -27,8 +27,13 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      zodaic: {
-        type: Sequelize.INTEGER
+      zodiacId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'zodiacsigns',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

@@ -19,7 +19,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      zodiacId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'zodiacsigns',
+          key: 'id'
+        }
       },
       likes: {
         type: Sequelize.INTEGER
