@@ -42,6 +42,17 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      image: {
+        type: Sequelize.STRING
+      },
+      phoneNumber: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      gender: {
+        type: Sequelize.STRING,
+        allowNull: false
       }
     })
   },

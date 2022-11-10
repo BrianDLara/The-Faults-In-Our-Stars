@@ -9,18 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // ZodiacSign.hasMany(models.Review, {
-      //   foreignKey: 'userId',
-      //   as: 'zodiac_review',
-      //   onDelete: 'CASCADE',
-      //   onUpdate: 'CASCADE'
-      // })
-      // ZodiacSign.hasMany(models.User, {
-      //   foreignKey: 'userId',
-      //   as: 'user_sign',
-      //   onDelete: 'CASCADE',
-      //   onUpdate: 'CASCADE'
-      // })
+      ZodiacSign.hasMany(models.Review, {
+        // foreignKey: 'user_id',
+        // as: 'zodiac_review',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
+      })
+      ZodiacSign.hasMany(models.User, {
+        // foreignKey: 'user_id',
+        // as: 'user_sign',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
+      })
     }
   }
   ZodiacSign.init(
