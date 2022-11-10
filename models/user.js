@@ -9,18 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.Review, {
-        foreignKey: 'userId',
-        as: 'user_review',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
-      User.hasOne(models.ZodiacSign, {
-        foreignKey: 'userId',
-        as: 'user_sign',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+      // User.hasMany(models.Review, {
+      //   foreignKey: 'userId',
+      //   as: 'user_review',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
+      // User.hasOne(models.ZodiacSign, {
+      //   foreignKey: 'userId',
+      //   as: 'user_sign',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
     }
   }
   User.init(
@@ -32,6 +32,10 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           isUserName: true
         }
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       firstName: {
         type: DataTypes.STRING,
@@ -50,10 +54,21 @@ module.exports = (sequelize, DataTypes) => {
       zodiacId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        references: {
-          model: 'zodiacsigns',
-          key: 'id'
+        // references: {
+        //   model: 'zodiacsigns',
+        //   key: 'id'
+        // },
+        image: {
+          type: DataTypes.STRING
         }
+      },
+      phoneNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      gender: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
     {

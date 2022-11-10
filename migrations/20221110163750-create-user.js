@@ -29,11 +29,11 @@ module.exports = {
       },
       zodiacId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'zodiacsigns',
-          key: 'id'
-        }
+        allowNull: false
+        // references: {
+        //   model: 'zodiacsigns',
+        //   key: 'id'
+        // }
       },
       createdAt: {
         allowNull: false,

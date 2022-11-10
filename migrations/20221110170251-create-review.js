@@ -20,19 +20,19 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'users',
-          key: 'id'
-        }
+        allowNull: false
+        // references: {
+        //   model: 'users',
+        //   key: 'id'
+        // }
       },
       zodiacId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'zodiacsigns',
-          key: 'id'
-        }
+        allowNull: false
+        // references: {
+        //   model: 'zodiacsigns',
+        //   key: 'id'
+        // }
       },
       likes: {
         type: Sequelize.INTEGER
