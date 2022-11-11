@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       email: {
         type: Sequelize.STRING
@@ -31,7 +31,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       phoneNumber: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       gender: {
         type: Sequelize.STRING

@@ -8,11 +8,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      // define association here
       User.hasMany(models.Review, {
-        foreignKey: 'user_id',
-        as: 'user_reviews',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        foreignKey: 'userId'
+        // as: 'user_reviews',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
+      })
+
+      User.hasMany(models.Zodiac, {
+        foreignKey: 'userId'
+        // as: 'user_reviews',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
       })
     }
   }
@@ -22,10 +30,10 @@ module.exports = (sequelize, DataTypes) => {
       image: DataTypes.STRING,
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      description: DataTypes.STRING,
+      description: DataTypes.TEXT,
       email: DataTypes.STRING,
       passwordDigest: DataTypes.STRING,
-      phoneNumber: DataTypes.INTEGER,
+      phoneNumber: DataTypes.TEXT,
       gender: DataTypes.STRING
     },
     {
