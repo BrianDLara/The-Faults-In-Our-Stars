@@ -15,36 +15,37 @@ module.exports = (sequelize, DataTypes) => {
         // onDelete: 'CASCADE',
         // onUpdate: 'CASCADE'
       })
-      Review.belongsTo(models.Zodiac, {
-        foreignKey: 'zodiacId'
-        // as: 'zodiac_reviews',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
-      })
+      // Review.belongsTo(models.Zodiac, {
+      //   foreignKey: 'zodiacId'
+      //   // as: 'zodiac_reviews',
+      //   // onDelete: 'CASCADE',
+      //   // onUpdate: 'CASCADE'
+      // })
     }
   }
   Review.init(
     {
       rating: DataTypes.INTEGER,
       title: DataTypes.STRING,
-      description: DataTypes.TEXT,
-      likes: DataTypes.INTEGER,
-      dislikes: DataTypes.INTEGER,
+      description: DataTypes.STRING,
       userId: {
         type: DataTypes.INTEGER,
-        onDelete: 'CASCADE',
+        allowNull: false,
+        field: 'user_id',
         references: {
-          model: 'users',
+          model: 'User',
           key: 'id'
-        },
-        zodiacId: {
-          type: DataTypes.INTEGER,
-          onDelete: 'CASCADE',
-          references: {
-            model: 'signs',
-            key: 'id'
-          }
         }
+      },
+      likes: DataTypes.INTEGER,
+      dislikes: DataTypes.INTEGER,
+      zodiacId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+        // references: {
+        //   model: 'zodiacsigns',
+        //   key: 'id'
+        // }
       }
     },
     {
