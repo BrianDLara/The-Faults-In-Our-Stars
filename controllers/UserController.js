@@ -22,6 +22,22 @@ const GetUsers = async (req, res) => {
   }
 }
 
+// const GetUsers = async (req, res) => {
+//   try {
+//     // const users = await User.findAll()
+
+//     const users = await User.findAll({
+//       include: Zodiac,
+//       raw: true,
+//       nest: true
+//     })
+
+//     res.send(users)
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
 const GetUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {

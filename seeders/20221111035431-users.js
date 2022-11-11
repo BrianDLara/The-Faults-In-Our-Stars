@@ -26,7 +26,8 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
-          zodiacId: zodiacs[Math.floor(Math.random() * zodiacs.length)].id,
+          zodiacId: falso.randNumber({ min: 1, max: 12 }),
+          // zodiacId: zodiacs[Math.floor(Math.random() * zodiacs.length)].id,
           createdAt: new Date(),
           updatedAt: new Date()
         }

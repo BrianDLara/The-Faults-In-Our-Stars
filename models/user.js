@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       User.hasOne(models.Zodiac, {
-        foreignKey: 'userId',
+        foreignKey: 'id',
         as: 'signs',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
