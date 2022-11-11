@@ -27,12 +27,18 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+
+        onDelete: 'CASCADE',
+
         field: 'user_id',
         onDelete: 'CASCADE'
       },
       zodiacId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+
+        onDelete: 'CASCADE',
+
         field: 'zodiac_id',
         onDelete: 'CASCADE'
       },
