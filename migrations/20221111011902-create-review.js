@@ -27,20 +27,30 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+<<<<<<< HEAD
         onDelete: 'CASCADE'
         // references: {
         //   model: 'users',
         //   key: 'id'
         // }
+=======
+        field: 'user_id',
+        onDelete: 'CASCADE'
+>>>>>>> d3541867e3b75f9e0732186ac892aa5ab6ad42b5
       },
       zodiacId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+<<<<<<< HEAD
         onDelete: 'CASCADE'
         // references: {
         //   model: 'signs',
         //   key: 'id'
         // }
+=======
+        field: 'zodiac_id',
+        onDelete: 'CASCADE'
+>>>>>>> d3541867e3b75f9e0732186ac892aa5ab6ad42b5
       },
       createdAt: {
         allowNull: false,
