@@ -11,7 +11,7 @@ const GetAllZodiacs = async (req, res) => {
 
 const GetZodiacById = async (req, res) => {
   try {
-    const zodiac = await zodiac.findByPk(req.params.id)
+    const zodiac = await Zodiac.findByPk(req.params.id)
     res.send(zodiac)
   } catch (error) {
     throw error
