@@ -22,7 +22,7 @@ module.exports = {
         },
         {
           name: 'Taurus',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/YDnFSH1.png',
           description: `What sign is more likely to take a six-hour bath, followed by a luxurious Swedish massage and decadent dessert spread? Why Taurus, of course! Taurus is an earth sign represented by the bull. Like their celestial spirit animal, Taureans enjoy relaxing in serene, bucolic environments surrounded by soft sounds, soothing aromas, and succulent flavors.`,
           createdAt: new Date(),
           updatedAt: new Date()
