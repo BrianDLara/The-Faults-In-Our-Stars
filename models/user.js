@@ -55,10 +55,10 @@ module.exports = (sequelize, DataTypes) => {
       zodiacId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // },
+        references: {
+          model: 'signs',
+          key: 'id'
+        },
         image: {
           type: DataTypes.STRING
         }

@@ -41,11 +41,11 @@ module.exports = (sequelize, DataTypes) => {
       dislikes: DataTypes.INTEGER,
       zodiacId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // }
+        allowNull: false,
+        references: {
+          model: 'signs',
+          key: 'id'
+        }
       }
     },
     {
