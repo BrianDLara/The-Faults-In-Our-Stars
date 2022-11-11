@@ -25,20 +25,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
-        // allowNull: false,
-        // field: 'user_id',
-        // onDelete: 'CASCADE',
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE'
         // references: {
         //   model: 'users',
         //   key: 'id'
         // }
       },
       zodiacId: {
-        type: Sequelize.INTEGER
-        // allowNull: false,
-        // field: 'zodiac_id',
-        // onDelete: 'CASCADE',
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE'
         // references: {
         //   model: 'signs',
         //   key: 'id'

@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Review.belongsTo(models.User, {
-        foreignKey: 'userId'
+        foreignKey: 'userId',
         // as: 'user_reviews',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       })
       // Review.belongsTo(models.Zodiac, {
       //   foreignKey: 'zodiacId'
@@ -31,9 +31,8 @@ module.exports = (sequelize, DataTypes) => {
       userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        field: 'user_id',
         references: {
-          model: 'User',
+          model: 'users',
           key: 'id'
         }
       },
@@ -41,11 +40,11 @@ module.exports = (sequelize, DataTypes) => {
       dislikes: DataTypes.INTEGER,
       zodiacId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // }
+        allowNull: false,
+        references: {
+          model: 'signs',
+          key: 'id'
+        }
       }
     },
     {
