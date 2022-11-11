@@ -1,5 +1,5 @@
 'use strict'
-const { User, sequelize } = require('../models')
+const { User, Review, sequelize } = require('../models')
 const falso = require('@ngneat/falso')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -11,14 +11,13 @@ module.exports = {
           raw: true
         })
         return {
-          userName: falso.randUserName(),
+          username: falso.randUserName(),
           image: falso.randAvatar(),
           firstName: falso.randFirstName(),
           lastName: falso.randLastName(),
           description: falso.randQuote(),
           email: falso.randEmail(),
-          password: falso.randPassword(),
-          zodiacId: falso.randNumber({ min: 1, max: 12 }),
+          passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
 

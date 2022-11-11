@@ -9,7 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
+      username: {
+        type: Sequelize.STRING
+      },
+      image: {
         type: Sequelize.STRING
       },
       firstName: {
@@ -24,16 +27,14 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      password: {
+      passwordDigest: {
         type: Sequelize.STRING
       },
-      zodiacId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // }
+      phoneNumber: {
+        type: Sequelize.INTEGER
+      },
+      gender: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -42,17 +43,6 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      image: {
-        type: Sequelize.STRING
-      },
-      phoneNumber: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      gender: {
-        type: Sequelize.STRING,
-        allowNull: false
       }
     })
   },

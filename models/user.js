@@ -8,68 +8,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
       User.hasMany(models.Review, {
-        // foreignKey: 'user_id',
-        // as: 'user_review',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
-      })
-      User.hasOne(models.ZodiacSign, {
-        // foreignKey: 'user_id',
-        // as: 'user_sign',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
+        foreignKey: 'user_id',
+        as: 'user_reviews',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       })
     }
   }
   User.init(
     {
-      userName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-          isUserName: true
-        }
-      },
-      image: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      firstName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      lastName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+      username: DataTypes.STRING,
+      image: DataTypes.STRING,
+      firstName: DataTypes.STRING,
+      lastName: DataTypes.STRING,
       description: DataTypes.STRING,
       email: DataTypes.STRING,
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      zodiacId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // },
-        image: {
-          type: DataTypes.STRING
-        }
-      },
-      phoneNumber: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      gender: {
-        type: DataTypes.STRING,
-        allowNull: false
-      }
+      passwordDigest: DataTypes.STRING,
+      phoneNumber: DataTypes.INTEGER,
+      gender: DataTypes.STRING
     },
     {
       sequelize,

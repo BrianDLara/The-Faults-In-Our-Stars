@@ -10,10 +10,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Review.belongsTo(models.User, {
-        // foreignKey: 'user_id',
-        // as: 'user_review',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
+        foreignKey: 'user_id',
+        as: 'user_reviews',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
+      Review.belongsTo(models.Zodiac, {
+        foreignKey: 'zodiac_id',
+        as: 'zodiac_reviews',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       })
     }
   }
@@ -21,25 +27,28 @@ module.exports = (sequelize, DataTypes) => {
     {
       rating: DataTypes.INTEGER,
       title: DataTypes.STRING,
-      description: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      likes: DataTypes.INTEGER,
+      dislikes: DataTypes.INTEGER,
       userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         field: 'user_id',
+        onDelete: 'CASCADE',
         references: {
-          model: 'User',
+          model: 'users',
           key: 'id'
         }
       },
-      likes: DataTypes.INTEGER,
-      dislikes: DataTypes.INTEGER,
       zodiacId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // }
+        allowNull: false,
+        field: 'zodiac_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'zodiacs',
+          key: 'id'
+        }
       }
     },
     {

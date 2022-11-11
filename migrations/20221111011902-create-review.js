@@ -16,29 +16,33 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'users',
-        //   key: 'id'
-        // }
-      },
-      zodiacId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-        // references: {
-        //   model: 'zodiacsigns',
-        //   key: 'id'
-        // }
+        type: Sequelize.TEXT
       },
       likes: {
         type: Sequelize.INTEGER
       },
       dislikes: {
         type: Sequelize.INTEGER
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'user_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      zodiacId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'zodiac_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'zodiacs',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
