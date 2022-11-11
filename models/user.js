@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
 
       User.hasOne(models.Zodiac, {
         foreignKey: 'id',
-        as: 'signs',
+        as: 'sign',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
@@ -53,14 +53,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
 
-      zodiacId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'signs',
-          key: 'id'
-        }
-      },
+      // zodiacId: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false,
+      //   references: {
+      //     model: 'signs',
+      //     key: 'id'
+      //   }
+      // },
 
       phoneNumber: {
         type: DataTypes.INTEGER,

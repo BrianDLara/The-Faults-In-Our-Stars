@@ -15,6 +15,13 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
+
+      Zodiac.hasMany(models.User, {
+        foreignKey: 'id',
+        as: 'user_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   Zodiac.init(

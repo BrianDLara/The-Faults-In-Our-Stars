@@ -10,7 +10,7 @@ const GetUsers = async (req, res) => {
       include: [
         {
           model: Zodiac,
-          as: 'signs',
+          as: 'sign',
           attributes: ['userId', 'name', 'image', 'description']
         }
       ]

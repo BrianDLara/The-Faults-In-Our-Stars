@@ -6,7 +6,7 @@ router.get('/', controller.GetUsers)
 router.get('/:id', controller.GetUserById)
 
 //Add a new review
-router.post('/new_review', controller.GetUserById)
+router.post('/new_user', controller.GetUserById)
 
 // update a review
 router.put(
