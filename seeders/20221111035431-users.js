@@ -10,6 +10,7 @@ module.exports = {
           order: sequelize.random(),
           raw: true
         })
+
         const zodiacs = await Zodiac.findAll({ raw: true })
         console.log(zodiacs)
 
