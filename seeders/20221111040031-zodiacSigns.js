@@ -65,43 +65,29 @@ module.exports = {
         },
         {
           name: 'Sagittarius',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/pdXaaCq.png',
           description: `Oh, the places Sagittarius goes! But… actually. This fire sign knows no bounds. Represented by the archer, Sagittarians are always on a quest for knowledge. The last fire sign of the zodiac, Sagittarius launches its many pursuits like blazing arrows, chasing after geographical, intellectual, and spiritual adventures.`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Capricorn',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/SekDFJa.png',
           description: `What is the most valuable resource? For Capricorn, the answer is clear: Time. Capricorn is climbing the mountain straight to the top and knows that patience, perseverance, and dedication is the only way to scale. The last earth sign of the zodiac, Capricorn, is represented by the sea-goat, a mythological creature with the body of a goat and the tail of a fish. Accordingly, Capricorns are skilled at navigating both the material and emotional realms.`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Aquarius',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/Q8f4CIW.png',
           description: `Despite the "aqua" in its name, Aquarius is actually the last air sign of the zodiac. Innovative, progressive, and shamelessly revolutionary, Aquarius is represented by the water bearer, the mystical healer who bestows water, or life, upon the land. Accordingly, Aquarius is the most humanitarian astrological sign. At the end of the day, Aquarius is dedicated to making the world a better place.`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Pisces',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/DHWWly4.png',
           description: `If you looked up the word "psychic" in the dictionary, there would definitely be a picture of Pisces next to it. Pisces is the most intuitive, sensitive, and empathetic sign of the entire zodiac — and that’s because it’s the last of the last. As the final sign, Pisces has absorbed every lesson — the joys and the pain, the hopes and the fears — learned by all of the other signs. It's symbolized by two fish swimming in opposite directions, representing the constant division of Pisces' attention between fantasy and reality.`,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          name: 'Gemini',
-          image: 'hnhfhh',
-          description: 'csdv',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          name: 'Gemini',
-          image: 'hnhfhh',
-          description: 'csdv',
           createdAt: new Date(),
           updatedAt: new Date()
         }
