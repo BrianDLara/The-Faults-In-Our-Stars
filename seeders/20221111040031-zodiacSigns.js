@@ -8,14 +8,14 @@ module.exports = {
       [
         {
           name: 'Gemini',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/lZaukg0.png',
           description: `Have you ever been so busy that you wished you could clone yourself just to get everything done? That's the Gemini experience in a nutshell. Spontaneous, playful, and adorably erratic, Gemini is driven by its insatiable curiosity. Appropriately symbolized by the celestial twins, this air sign was interested in so many pursuits that it had to double itself. You know, NBD!`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Aries',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/9jTmbEH.png',
           description: `The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!`,
           createdAt: new Date(),
           updatedAt: new Date()
