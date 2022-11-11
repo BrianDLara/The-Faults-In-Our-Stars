@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-<<<<<<< HEAD
+
       zodiacId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -64,19 +64,7 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.STRING
         }
       },
-=======
-      // zodiacId: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false,
-      // references: {
-      //   model: 'zodiacsigns',
-      //   key: 'id'
-      // },
-      // image: {
-      //   type: DataTypes.STRING
-      // },
-      // },
->>>>>>> 950a4c792c8549e6a3ee9dd1dbdf578c844e428e
+
       phoneNumber: {
         type: DataTypes.INTEGER,
         allowNull: false
