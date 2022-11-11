@@ -14,3 +14,8 @@ const comparePassword = async (storedPassword, password) => {
   let passwordMatch = await bcrypt.compare(password, storedPassword)
   return passwordMatch
 }
+
+const createToken = (payload) => {
+  let token = jwt.sign(payload, APP_SECRET)
+  return token
+}

@@ -29,36 +29,37 @@ module.exports = {
         },
         {
           name: 'Cancer',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/YCPQq2F.png',
           description: `Represented by the crab, Cancer seamlessly weaves between the sea and shore representing Cancer’s ability to exist in both emotional and material realms. Cancers are highly intuitive and their psychic abilities manifest in tangible spaces. But—just like the hard-shelled crustaceans—this water sign is willing to do whatever it takes to protect itself emotionally. In order to get to know this sign, you're going to need to establish trust! `,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Leo',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/8KVEawj.png',
           description: `Roll out the red carpet because Leo has arrived. Passionate, loyal, and infamously dramatic, Leo is represented by the lion and these spirited fire signs are the kings and queens of the celestial jungle. They're delighted to embrace their royal status: Vivacious, theatrical, and fiery, Leos love to bask in the spotlight and celebrate… well, themselves.`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Virgo',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/QVRnboA.png',
           description: `You know the expression, "if you want something done, give it to a busy person?" Well, that definitely is the Virgo anthem. Virgos are logical, practical, and systematic in their approach to life. Virgo is an earth sign historically represented by the goddess of wheat and agriculture, an association that speaks to Virgo's deep-rooted presence in the material world. This earth sign is a perfectionist at heart and isn’t afraid to improve skills through diligent and consistent practice.`,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Libra',
-          image: 'hnhfhh',
+          image: 'https://i.imgur.com/ZvUB9uL.png',
           description: `Balance, harmony, and justice define Libra energy. As a cardinal air sign, Libra is represented by the scales (interestingly, the only inanimate object of the zodiac), an association that reflects Libra's fixation on establishing equilibrium. Libra is obsessed with symmetry and strives to create equilibrium in all areas of life — especially when it comes to matters of the heart. `,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           name: 'Scorpio',
-          image: `Elusive and mysterious, Scorpio is one of the most misunderstood signs of the zodiac. Scorpio is a water sign that uses emotional energy as fuel, cultivating powerful wisdom through both the physical and unseen realms. In fact, Scorpio derives its extraordinary courage from its psychic abilities, which is what makes this sign one of the most complicated, dynamic signs of the zodiac.`,
-          description: 'csdv',
+          image: `https://i.imgur.com/ksCx8Ek.png`,
+          description:
+            'Elusive and mysterious, Scorpio is one of the most misunderstood signs of the zodiac. Scorpio is a water sign that uses emotional energy as fuel, cultivating powerful wisdom through both the physical and unseen realms. In fact, Scorpio derives its extraordinary courage from its psychic abilities, which is what makes this sign one of the most complicated, dynamic signs of the zodiac.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
