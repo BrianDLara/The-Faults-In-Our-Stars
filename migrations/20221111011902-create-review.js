@@ -30,7 +30,7 @@ module.exports = {
 
         onDelete: 'CASCADE',
 
-        field: 'user_id',
+        // field: 'user_id',
         onDelete: 'CASCADE'
       },
       zodiacId: {
@@ -39,7 +39,7 @@ module.exports = {
 
         onDelete: 'CASCADE',
 
-        field: 'zodiac_id',
+        // field: 'zodiac_id',
         onDelete: 'CASCADE'
       },
       createdAt: {
