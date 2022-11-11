@@ -20,6 +20,37 @@ const GetUserById = async (req, res) => {
   }
 }
 
+const RegisterUser = async (req, res) => {
+  try {
+    const {
+      username,
+      image,
+      firstName,
+      lastName,
+      description,
+      email,
+      password,
+      phoneNumber,
+      gender
+    } = req.body
+    let passwordDigest = await middleware.hashPassword(password)
+    const user = await User.create({
+      username,
+      image,
+      firstName,
+      lastName,
+      description,
+      email,
+      passwordDigest,
+      phoneNumber,
+      gender
+    })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateUser = async (req, res) => {
   try {
     let userBody = { ...req.body }
@@ -43,6 +74,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetUsers,
   GetUserById,
+  RegisterUser,
   CreateUser,
   DeleteUser
 }

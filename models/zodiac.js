@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Zodiac.belongsTo(models.User, {
         foreignKey: 'userId',
-        as: 'zodiac_reviews',
+        as: 'zodiac_id',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

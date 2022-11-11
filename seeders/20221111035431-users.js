@@ -20,6 +20,7 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber({ length: 10 }),
           gender: falso.randGender(),
+          zodiacId: falso.randNumber({ min: 1, max: 12 }),
 
           createdAt: new Date(),
           updatedAt: new Date()

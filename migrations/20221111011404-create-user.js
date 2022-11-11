@@ -36,6 +36,9 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
+      zodiacId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

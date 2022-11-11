@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
 
       User.hasMany(models.Zodiac, {
         foreignKey: 'userId',
-        as: 'zodiac_id',
+        as: 'signs',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
@@ -59,9 +59,6 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: 'signs',
           key: 'id'
-        },
-        image: {
-          type: DataTypes.STRING
         }
       },
 
