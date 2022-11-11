@@ -1,5 +1,6 @@
 'use strict'
 const { User, Zodiac, sequelize } = require('../models')
+const { Op } = require('sequelize')
 const falso = require('@ngneat/falso')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
       [...Array(100)].map(async () => {
         const user = await User.findOne({
           order: sequelize.random(),
+          // where: { zodiacId: { [Op.not]: zodiac.id } },
           raw: true
         })
 
@@ -24,9 +26,7 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
-          zodiacId: falso.randNumber({ min: 1, max: 12 }),
-          // zodiacId: zodiacs[Math.floor(Math.random() * zodiacs.length)].id,
-          // [Math.floor(Math.random() * Zodiac.length)]
+          zodiacId: zodiacs[Math.floor(Math.random() * zodiacs.length)].id,
           createdAt: new Date(),
           updatedAt: new Date()
         }

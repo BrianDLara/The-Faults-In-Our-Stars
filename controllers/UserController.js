@@ -1,10 +1,21 @@
-const { User } = require('../models')
+const { User, Zodiac } = require('../models')
 const middleware = require('../middleware')
 const { Op } = require('sequelize')
 
 const GetUsers = async (req, res) => {
   try {
-    const users = await User.findAll()
+    // const users = await User.findAll()
+
+    const users = await User.findAll({
+      include: [
+        {
+          model: Zodiac,
+          as: 'signs',
+          attributes: ['userId', 'name', 'image', 'description']
+        }
+      ]
+    })
+
     res.send(users)
   } catch (error) {
     throw error
@@ -13,7 +24,15 @@ const GetUsers = async (req, res) => {
 
 const GetUserById = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id)
+    const user = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: Zodiac,
+          as: 'signs',
+          attributes: ['userId', 'name', 'image', 'description']
+        }
+      ]
+    })
     res.send(user)
   } catch (error) {
     throw error
