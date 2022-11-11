@@ -1,5 +1,5 @@
 'use strict'
-const { User, Review, sequelize } = require('../models')
+const { User } = require('../m')
 const falso = require('@ngneat/falso')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -20,7 +20,6 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
-
           createdAt: new Date(),
           updatedAt: new Date()
         }
