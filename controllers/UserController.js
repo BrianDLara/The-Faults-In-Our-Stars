@@ -77,6 +77,19 @@ const LoginUser = async (req, res) => {
   }
 }
 
+const UpdateUser = async (req, res) => {
+  try {
+    let userId = parseInt(req.params.user_id)
+    let updatedUser = await User.update(req.body, {
+      where: { id: userId },
+      returning: true
+    })
+    res.send(updatedUser)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateUser = async (req, res) => {
   try {
     let userBody = { ...req.body }
@@ -103,5 +116,6 @@ module.exports = {
   RegisterUser,
   LoginUser,
   CreateUser,
+  UpdateUser,
   DeleteUser
 }
