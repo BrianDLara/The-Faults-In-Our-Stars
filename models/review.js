@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         // onDelete: 'CASCADE',
         // onUpdate: 'CASCADE'
       })
-      Review.belongsTo(models.Zodiac, {
-        foreignKey: 'zodiacId'
-        // as: 'zodiac_reviews',
-        // onDelete: 'CASCADE',
-        // onUpdate: 'CASCADE'
-      })
+      // Review.belongsTo(models.Zodiac, {
+      //   foreignKey: 'zodiacId'
+      //   // as: 'zodiac_reviews',
+      //   // onDelete: 'CASCADE',
+      //   // onUpdate: 'CASCADE'
+      // })
     }
   }
   Review.init(
