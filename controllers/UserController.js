@@ -20,4 +20,25 @@ const GetUserById = async (req, res) => {
   }
 }
 
-const createUser = async (req, res) => {}
+const CreateUser = async (req, res) => {
+  try {
+    let userBody = { ...req.body }
+    const createdUser = await User.create(userBody)
+    res.send(createdUser)
+  } catch (error) {
+    throw error
+  }
+}
+
+const DeleteUser = async (req, res) => {
+  let userId = parseInt(req.params.id)
+  await User.destroy({ where: { id: userId } })
+  res.send()
+}
+
+module.exports = {
+  GetUserById,
+  GetUserById,
+  CreateUser,
+  DeleteUser
+}
