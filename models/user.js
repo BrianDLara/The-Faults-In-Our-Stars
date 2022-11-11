@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Review, {
-        foreignKey: 'userId',
-        as: 'user_reviews',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        foreignKey: 'userId'
+        // as: 'user_reviews',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
       })
 
       User.hasMany(models.Zodiac, {
-        foreignKey: 'userId',
-        as: 'zodiac_id',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        foreignKey: 'userId'
+        // as: 'user_reviews',
+        // onDelete: 'CASCADE',
+        // onUpdate: 'CASCADE'
       })
     }
   }
