@@ -31,8 +31,9 @@ module.exports = {
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
           // zodiacId: zodiac.id,
+          // zodiac[Math.floor(Math.random() * zodiac.length)].id
           // falso.randNumber({ min: 1, max: 12 }),
-          zodiacId: zodiac[Math.floor(Math.random() * zodiac.length)].id,
+          zodiacId: falso.randNumber({ min: 1, max: 12 }),
           createdAt: new Date(),
           updatedAt: new Date()
         }
