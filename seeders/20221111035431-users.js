@@ -7,14 +7,15 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const users = await Promise.all(
       [...Array(100)].map(async () => {
-        const user = await User.findOne({
+        // const user = await User.findOne({
+        //   order: sequelize.random(),
+        //   where: { zodiacId: { [Op.not]: user.id } },
+        //   raw: true
+        // })
+        const zodiac = await Zodiac.findOne({
           order: sequelize.random(),
-          // where: { zodiacId: { [Op.not]: zodiac.id } },
           raw: true
         })
-
-        const zodiacs = await Zodiac.findAll({ raw: true })
-        console.log(zodiacs)
 
         return {
           username: falso.randUserName(),
@@ -26,7 +27,8 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
-          zodiacId: falso.randNumber({ min: 1, max: 12 }),
+          zodiacId: zodiac.id,
+          // falso.randNumber({ min: 1, max: 12 }),
           // zodiacId: zodiacs[Math.floor(Math.random() * zodiacs.length)].id,
           createdAt: new Date(),
           updatedAt: new Date()

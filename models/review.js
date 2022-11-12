@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Review.belongsTo(models.User, {
-        foreignKey: 'userId',
-        // as: 'user_reviews',
+        foreignKey: 'user_id',
+        as: 'user_reviews',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      // Review.belongsTo(models.Zodiac, {
-      //   foreignKey: 'zodiacId'
-      //   // as: 'zodiac_reviews',
-      //   // onDelete: 'CASCADE',
-      //   // onUpdate: 'CASCADE'
-      // })
+      Review.belongsTo(models.Zodiac, {
+        foreignKey: 'movie_id',
+        as: 'zodiac_reviews',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      })
     }
   }
   Review.init(
