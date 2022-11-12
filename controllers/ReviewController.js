@@ -1,4 +1,4 @@
-const { Review } = require('../models')
+const { Review, User } = require('../models')
 
 const GetAllReviews = async (req, res) => {
   try {
@@ -20,9 +20,15 @@ const GetReviewById = async (req, res) => {
 
 const CreateReview = async (req, res) => {
   try {
-    let reviewBody = { ...req.body }
-    const createdReview = await User.create(reviewBody)
-    res.send(createdReview)
+    let userId = parseInt(req.params.user_id)
+    let zodiacId = parseInt(req.params.zodiac_id)
+    let reviewBody = {
+      userId,
+      zodiacId,
+      ...req.body
+    }
+    const createdUser = await Review.create(reviewBody)
+    res.send(createdUser)
   } catch (error) {
     throw error
   }
