@@ -28,15 +28,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       image: DataTypes.TEXT,
-      description: DataTypes.TEXT,
-      userId: {
-        type: DataTypes.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'users',
-          key: 'id'
-        }
-      }
+      description: DataTypes.TEXT
+      // userId: {
+      //   type: DataTypes.INTEGER,
+      //   onDelete: 'CASCADE',
+      //   references: {
+      //     model: 'users',
+      //     key: 'id'
+      //   }
+      // }
     },
     {
       sequelize,
