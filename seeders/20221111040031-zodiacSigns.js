@@ -3,7 +3,7 @@ const { User, sequelize } = require('../models')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    let user = await User.findOne({ order: sequelize.random(), raw: true })
+    let user = await User.findOne({ where: { zodiacId: id } })
     return queryInterface.bulkInsert(
       'signs',
       [
