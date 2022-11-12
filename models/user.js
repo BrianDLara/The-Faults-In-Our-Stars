@@ -16,13 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE'
       })
 
-      // User.hasOne(models.Zodiac, {
-      //   foreignKey: 'id',
-      //   as: 'sign',
-      //   onDelete: 'CASCADE',
-      //   onUpdate: 'CASCADE'
-      // })
-      // User.belongsTo(models.Zodiac, { foreignKey: 'id', as: 'user_sign' })
       User.belongsTo(models.Zodiac, { foreignKey: 'zodiacId', as: 'user_sign' })
     }
   }
