@@ -19,9 +19,9 @@ module.exports = {
           rating: falso.randNumber({ min: 1, max: 5 }),
           title: falso.randCatchPhrase(),
           description: falso.randQuote(),
-          userId: user.id,
+          user_id: user.id,
           // falso.randNumber({ min: 1, max: 100 }),
-          zodiacId: zodiac.id,
+          zodiac_id: zodiac.id,
           // falso.randNumber({ min: 1, max: 12 }),
 
           createdAt: new Date(),
