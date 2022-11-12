@@ -1,9 +1,10 @@
 'use strict'
 const { User, sequelize } = require('../models')
+const falso = require('@ngneat/falso')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    // let user = await User.findOne({ where: { zodiacId: id } })
+    let user = await User.findOne({ order: sequelize.random(), raw: true })
     // const users = await User.findAll({ raw: true })
     // console.log(users)
     return queryInterface.bulkInsert(
@@ -13,10 +14,10 @@ module.exports = {
           name: 'Gemini',
           image: 'https://i.imgur.com/lZaukg0.png',
           description: `Have you ever been so busy that you wished you could clone yourself just to get everything done? That's the Gemini experience in a nutshell. Spontaneous, playful, and adorably erratic, Gemini is driven by its insatiable curiosity. Appropriately symbolized by the celestial twins, this air sign was interested in so many pursuits that it had to double itself. You know, NBD!`,
-          // // userId: user.zodiacId,
+          // userId: falso.randNumber({ min: 1, max: 100 }),
           // // userId: users[Math.floor(Math.random() * users.length)].id,
           // // userId: parseInt([users.id]),
-          // userId:users.map(user)
+          userId: users.id,
           createdAt: new Date(),
           updatedAt: new Date()
         },
