@@ -13,12 +13,10 @@ module.exports = {
         //   raw: true
         // })
 
-        // const zodiac = await Zodiac.findOne({
-        //   order: sequelize.random(),
-        //   raw: true
-        // })
-
-        const zodiac = await Zodiac.findAll({ raw: true })
+        const zodiac = await Zodiac.findOne({
+          order: sequelize.random(),
+          raw: true
+        })
 
         return {
           username: falso.randUserName(),
@@ -30,10 +28,10 @@ module.exports = {
           passwordDigest: falso.randPassword(),
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
-          // zodiacId: zodiac.id,
-          // zodiac[Math.floor(Math.random() * zodiac.length)].id
+          zodiacId: zodiac.id,
+          // zodiacId: zodiac[Math.floor(Math.random() * zodiac.length)].id
           // falso.randNumber({ min: 1, max: 12 }),
-          zodiacId: falso.randNumber({ min: 1, max: 12 }),
+          // zodiacId: falso.randNumber({ min: 1, max: 12 }),
           createdAt: new Date(),
           updatedAt: new Date()
         }
