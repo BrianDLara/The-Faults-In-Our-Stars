@@ -64,7 +64,7 @@ const RegisterUser = async (req, res) => {
       lastName,
       description,
       email,
-      password,
+      passwordD,
       phoneNumber,
       gender
     } = req.body
@@ -149,6 +149,30 @@ const DeleteUser = async (req, res) => {
   }
 }
 
+const CheckSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
+const UpdatePassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body
+    const user = await User.findByPk(req.params.user_id)
+    if (
+      user &&
+      (await middleware.comparePassword(
+        user.dataValues.passwordDigest,
+        oldPassword
+      ))
+    ) {
+      let passwordDigest = await middleware.hashPassword(newPassword)
+      await user.update({ passwordDigest })
+      return res.send({ status: 'Ok', payload: user })
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+  } catch (error) {}
+}
+
 // const DeleteUser = async (req, res) => {
 //   try {
 //     let userId = parseInt(req.params.user_id)
@@ -169,5 +193,7 @@ module.exports = {
   LoginUser,
   CreateUser,
   UpdateUser,
-  DeleteUser
+  DeleteUser,
+  CheckSession,
+  UpdatePassword
 }
