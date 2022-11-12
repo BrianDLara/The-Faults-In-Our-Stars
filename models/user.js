@@ -16,12 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE'
       })
 
-      User.hasOne(models.Zodiac, {
-        foreignKey: 'id',
-        as: 'sign',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+      // User.hasOne(models.Zodiac, {
+      //   foreignKey: 'id',
+      //   as: 'sign',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
+      // User.belongsTo(models.Zodiac, { foreignKey: 'id', as: 'user_sign' })
+      User.belongsTo(models.Zodiac, { foreignKey: 'zodiacId', as: 'user_sign' })
     }
   }
   User.init(
@@ -29,10 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        validate: {
-          isUserName: true
-        }
+        unique: true
+        // validate: {
+        //   isUserName: true
+        // }
       },
       image: {
         type: DataTypes.STRING,
@@ -53,14 +55,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
 
-      // zodiacId: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false,
-      //   references: {
-      //     model: 'signs',
-      //     key: 'id'
-      //   }
-      // },
+      zodiacId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'signs',
+          key: 'id'
+        }
+      },
 
       phoneNumber: {
         type: DataTypes.INTEGER,

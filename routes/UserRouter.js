@@ -6,20 +6,20 @@ router.get('/', controller.GetUsers)
 router.get('/:id', controller.GetUserById)
 
 //Add a new review
-router.post('/new_user', controller.GetUserById)
+router.post('/zodiac_id/:zodiac_id/new_user', controller.CreateUser)
 
 // update a review
 router.put(
-  '/:user_id'
+  '/:user_id',
   //   middleware.stripToken,
   //   middleware.verifyToken,
-  //   controller.UpdateUser
+  controller.UpdateUser
 )
 router.delete(
-  '/:user_id'
+  '/:id',
   //   middleware.stripToken,
   //   middleware.verifyToken,
-  //   controller.DeleteUser
+  controller.DeleteUser
 )
 
 module.exports = router

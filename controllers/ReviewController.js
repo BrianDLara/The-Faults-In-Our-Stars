@@ -9,6 +9,15 @@ const GetAllReviews = async (req, res) => {
   }
 }
 
+const GetReviewById = async (req, res) => {
+  try {
+    const review = await Review.findByPk(req.params.id)
+    res.send(review)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateReview = async (req, res) => {
   try {
     let reviewBody = { ...req.body }
@@ -44,6 +53,7 @@ const DeleteReview = async (req, res) => {
 
 module.exports = {
   GetAllReviews,
+  GetReviewById,
   CreateReview,
   UpdateReview,
   DeleteReview

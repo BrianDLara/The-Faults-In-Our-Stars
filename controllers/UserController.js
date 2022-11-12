@@ -10,7 +10,7 @@ const GetUsers = async (req, res) => {
       include: [
         {
           model: Zodiac,
-          as: 'sign',
+          as: 'user_sign',
           attributes: ['userId', 'name', 'image', 'description']
         }
       ]
@@ -44,7 +44,7 @@ const GetUserById = async (req, res) => {
       include: [
         {
           model: Zodiac,
-          as: 'signs',
+          as: 'user_sign',
           attributes: ['userId', 'name', 'image', 'description']
         }
       ]
@@ -127,7 +127,11 @@ const UpdateUser = async (req, res) => {
 
 const CreateUser = async (req, res) => {
   try {
-    let userBody = { ...req.body }
+    let zodiacId = parseInt(req.params.zodiac_id)
+    let userBody = {
+      zodiacId,
+      ...req.body
+    }
     const createdUser = await User.create(userBody)
     res.send(createdUser)
   } catch (error) {
@@ -144,6 +148,19 @@ const DeleteUser = async (req, res) => {
     throw error
   }
 }
+
+// const DeleteUser = async (req, res) => {
+//   try {
+//     let userId = parseInt(req.params.user_id)
+//     let deletedUser = await User.destroy(req.body, {
+//       where: { id: userId },
+//       returning: true
+//     })
+//     res.send(deletedUser)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 module.exports = {
   GetUsers,
