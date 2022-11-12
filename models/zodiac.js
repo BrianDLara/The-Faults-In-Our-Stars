@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Zodiac.belongsTo(models.User, {
-        foreignKey: 'id',
-        as: 'zodiac_id',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+      // Zodiac.belongsTo(models.User, {
+      //   foreignKey: 'id',
+      //   as: 'zodiac_id',
+      //   onDelete: 'CASCADE',
+      //   onUpdate: 'CASCADE'
+      // })
 
       Zodiac.hasMany(models.User, {
         foreignKey: 'zodiacId',
