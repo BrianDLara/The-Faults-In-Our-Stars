@@ -5,6 +5,12 @@ const falso = require('@ngneat/falso')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    const userImages = [
+      'https://i.imgur.com/6ETfboe.jpeg',
+      'https://i.imgur.com/xsUQMTv.jpeg',
+      'https://i.imgur.com/8NzOvCm.jpeg',
+      'https://i.imgur.com/FdtVVNk.jpeg'
+    ]
     const users = await Promise.all(
       [...Array(100)].map(async () => {
         // const user = await User.findOne({
@@ -20,7 +26,7 @@ module.exports = {
 
         return {
           username: falso.randUserName(),
-          image: falso.randAvatar({ size: 600 }),
+          // image: falso.randAvatar({ size: 600 }),
           firstName: falso.randFirstName(),
           lastName: falso.randLastName(),
           description: falso.randQuote(),
