@@ -66,7 +66,8 @@ const RegisterUser = async (req, res) => {
       email,
       password,
       phoneNumber,
-      gender
+      gender,
+      zodiacId
     } = req.body
     console.log(password)
     let passwordDigest = await middleware.hashPassword(password)
@@ -79,7 +80,8 @@ const RegisterUser = async (req, res) => {
       email,
       passwordDigest,
       phoneNumber,
-      gender
+      gender,
+      zodiacId
     })
     res.send(user)
   } catch (error) {
