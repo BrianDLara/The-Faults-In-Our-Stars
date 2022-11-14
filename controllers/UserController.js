@@ -45,7 +45,7 @@ const GetUserById = async (req, res) => {
         {
           model: Zodiac,
           as: 'user_sign',
-          attributes: ['userId', 'name', 'image', 'description']
+          attributes: ['name', 'image', 'description']
         }
       ]
     })
