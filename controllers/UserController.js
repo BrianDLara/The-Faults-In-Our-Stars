@@ -85,7 +85,7 @@ const RegisterUser = async (req, res) => {
     })
     res.send(user)
   } catch (error) {
-    throw error
+    res.status(500).send({ err: error })
   }
 }
 
