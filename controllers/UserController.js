@@ -11,7 +11,7 @@ const GetUsers = async (req, res) => {
         {
           model: Zodiac,
           as: 'user_sign',
-          attributes: ['userId', 'name', 'image', 'description']
+          attributes: ['name', 'image', 'description']
         }
       ]
     })
@@ -64,10 +64,11 @@ const RegisterUser = async (req, res) => {
       lastName,
       description,
       email,
-      passwordD,
+      password,
       phoneNumber,
       gender
     } = req.body
+    console.log(password)
     let passwordDigest = await middleware.hashPassword(password)
     const user = await User.create({
       username,
