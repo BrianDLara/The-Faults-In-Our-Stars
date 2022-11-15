@@ -22,7 +22,7 @@ module.exports = {
           userId: user.id,
           // falso.randNumber({ min: 1, max: 100 }),
           // zodiacId: user.zodiacId,
-          zodiacId: user.id,
+          zodiacId: zodiac.id,
 
           // falso.randNumber({ min: 1, max: 12 }),
 
