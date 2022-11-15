@@ -21,7 +21,7 @@ const GetReviewById = async (req, res) => {
 const GetReviewByZodiacId = async (req, res) => {
   try {
     const { id } = req.params
-    const reviews = await Review.find({ zodiacId: id })
+    const reviews = await Review.findAll({ zodiacId: id })
     if (reviews) {
       return res.status(200).json({ reviews })
     }
