@@ -3,7 +3,6 @@ const controller = require('../controllers/UserController')
 const middleware = require('../middleware')
 
 router.get('/', controller.GetUsers)
-router.get('/:id', controller.GetUserById)
 
 router.post('/login', controller.LoginUser)
 router.post('/register', controller.RegisterUser)
@@ -38,4 +37,5 @@ router.delete(
   controller.DeleteUser
 )
 
+router.get('/:id', controller.GetUserById)
 module.exports = router
