@@ -40,8 +40,8 @@ const CreateReview = async (req, res) => {
       zodiacId,
       ...req.body
     }
-    const createdUser = await Review.create(reviewBody)
-    res.send(createdUser)
+    const createdReview = await Review.create(reviewBody)
+    res.send(createdReview)
   } catch (error) {
     throw error
   }
