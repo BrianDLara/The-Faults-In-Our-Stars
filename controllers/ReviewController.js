@@ -50,7 +50,7 @@ const CreateReview = async (req, res) => {
 const UpdateReview = async (req, res) => {
   try {
     let reviewId = parseInt(req.params.review_id)
-    if (reviewId === 'null' || reviewId === 'undefined') {
+    if (reviewId === null || reviewId === undefined) {
       console.log('what a mess')
     } else {
       let updatedReview = await Review.update(req.body, {
