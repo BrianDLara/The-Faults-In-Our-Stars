@@ -9,9 +9,6 @@ module.exports = {
       'https://i.imgur.com/6ETfboe.jpeg',
       'https://i.imgur.com/xsUQMTv.jpeg',
       'https://i.imgur.com/8NzOvCm.jpeg',
-<<<<<<< HEAD
-      'https://i.imgur.com/FdtVVNk.jpeg'
-=======
       'https://i.imgur.com/FdtVVNk.jpeg',
       'https://i.imgur.com/xsV0sDX.jpeg',
       'https://i.imgur.com/J65dL02.jpeg',
@@ -44,7 +41,6 @@ module.exports = {
       'https://i.imgur.com/3P5E9AN.jpeg',
       'https://i.imgur.com/rgSsqWq_d.webp?maxwidth=520&shape=thumb&fidelity=high',
       'https://i.imgur.com/mry5qHS.jpeg'
->>>>>>> e89d08ecca410aff56de8ab77f798bae41a4fa67
     ]
     const users = await Promise.all(
       [...Array(100)].map(async (arr, idx) => {
@@ -61,11 +57,7 @@ module.exports = {
 
         return {
           username: falso.randUserName(),
-<<<<<<< HEAD
-          // image: falso.randAvatar({ size: 600 }),
-=======
           image: userImages[idx],
->>>>>>> e89d08ecca410aff56de8ab77f798bae41a4fa67
           firstName: falso.randFirstName(),
           lastName: falso.randLastName(),
           description: falso.randQuote(),
