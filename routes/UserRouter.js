@@ -16,10 +16,10 @@ router.post(
 )
 
 router.get(
-  '/session',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CheckSession
+  '/session'
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  // controller.CheckSession
 )
 //Add a new review
 router.post('/zodiac_id/:zodiac_id/new_user', controller.CreateUser)
