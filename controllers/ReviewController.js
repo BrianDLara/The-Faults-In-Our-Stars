@@ -57,8 +57,8 @@ const UpdateReview = async (req, res) => {
         where: { id: reviewId },
         returning: true
       })
+      res.send(updatedReview)
     }
-    res.send(updatedReview)
   } catch (error) {
     throw error
   }
