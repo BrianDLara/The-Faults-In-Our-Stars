@@ -18,6 +18,19 @@ const GetReviewById = async (req, res) => {
   }
 }
 
+const GetReviewByZodiacId = async (req, res) => {
+  try {
+    const { id } = req.params
+    const reviews = await Review.find({ zodiacId: id })
+    if (reviews) {
+      return res.status(200).json({ reviews })
+    }
+    return res.status(404).send('Reviews with the specified ID does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const CreateReview = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id)
@@ -58,6 +71,7 @@ const DeleteReview = async (req, res) => {
 }
 
 module.exports = {
+  GetReviewByZodiacId,
   GetAllReviews,
   GetReviewById,
   CreateReview,
