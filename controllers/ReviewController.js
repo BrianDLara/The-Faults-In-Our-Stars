@@ -50,15 +50,12 @@ const CreateReview = async (req, res) => {
 const UpdateReview = async (req, res) => {
   try {
     let reviewId = parseInt(req.params.review_id)
-    if (reviewId === null || reviewId === undefined) {
-      console.log('what a mess')
-    } else {
-      let updatedReview = await Review.update(req.body, {
-        where: { id: reviewId },
-        returning: true
-      })
-      res.send(updatedReview)
-    }
+
+    let updatedReview = await Review.update(req.body, {
+      where: { id: reviewId },
+      returning: true
+    })
+    res.send(updatedReview)
   } catch (error) {
     throw error
   }
