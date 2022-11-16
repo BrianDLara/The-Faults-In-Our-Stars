@@ -14,7 +14,7 @@
 
 #### [LinkedIn](https://www.linkedin.com/in/ryan-caillet/) | [GitHub](https://github.com/rycaillet)
 
-### Stephan D Ramalho
+### Stephan "Marquee" Ramalho
 
 #### [LinkedIn](www.linkedin.com/in/stephan-ramalho) | [GitHub](https://github.com/sramalho94)
 
@@ -92,7 +92,7 @@
 
 ![image]()
 
-### **_Task Lists_** 
+### **_Task Lists_**
 
 - [ ] Add more pages so it can look like a proper website
 - [ ] Make a Landing page

@@ -23,7 +23,8 @@ module.exports = {
           // falso.randNumber({ min: 1, max: 100 }),
           // zodiacId: user.zodiacId,
           zodiacId: zodiac.id,
-
+          likes: falso.randNumber({ min: 10, max: 20 }),
+          dislikes: falso.randNumber({ min: 0, max: 5 }),
           // falso.randNumber({ min: 1, max: 12 }),
 
           createdAt: new Date(),
