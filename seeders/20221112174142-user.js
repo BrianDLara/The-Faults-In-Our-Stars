@@ -63,12 +63,6 @@ module.exports = {
     ]
     const users = await Promise.all(
       [...Array(50)].map(async (arr, idx) => {
-        // const user = await User.findOne({
-        //   order: sequelize.random(),
-        //   where: { zodiacId: { [Op.not]: user.id } },
-        //   raw: true
-        // })
-
         const zodiac = await Zodiac.findOne({
           order: sequelize.random(),
           raw: true
@@ -85,10 +79,6 @@ module.exports = {
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
           zodiacId: zodiac.id,
-          // zodiacId: zodiac[Math.floor(Math.random() * zodiac.length)].id
-          // falso.randNumber({ min: 1, max: 12 }),
-          // zodiacId: falso.randNumber({ min: 1, max: 12 }),
-          createdAt: new Date(),
           updatedAt: new Date()
         }
       })

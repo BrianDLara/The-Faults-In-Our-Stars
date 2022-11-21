@@ -6,10 +6,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const reviews = await Promise.all(
       [...Array(100)].map(async () => {
-        // let review = await Review.findOne({
-        //   order: sequelize.random(),
-        //   raw: true
-        // })
         let user = await User.findOne({ order: sequelize.random(), raw: true })
         let zodiac = await Zodiac.findOne({
           order: sequelize.random(),
@@ -20,13 +16,9 @@ module.exports = {
           title: falso.randCatchPhrase(),
           description: falso.randQuote(),
           userId: user.id,
-          // falso.randNumber({ min: 1, max: 100 }),
-          // zodiacId: user.zodiacId,
           zodiacId: zodiac.id,
           likes: falso.randNumber({ min: 10, max: 20 }),
           dislikes: falso.randNumber({ min: 0, max: 5 }),
-          // falso.randNumber({ min: 1, max: 12 }),
-
           createdAt: new Date(),
           updatedAt: new Date()
         }
