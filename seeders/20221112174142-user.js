@@ -62,7 +62,7 @@ module.exports = {
       'https://i.imgur.com/TlSLPoGb.jpg'
     ]
     const users = await Promise.all(
-      [...Array(100)].map(async (arr, idx) => {
+      [...Array(50)].map(async (arr, idx) => {
         // const user = await User.findOne({
         //   order: sequelize.random(),
         //   where: { zodiacId: { [Op.not]: user.id } },
