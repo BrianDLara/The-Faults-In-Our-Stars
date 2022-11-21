@@ -4,8 +4,6 @@ const { Op } = require('sequelize')
 
 const GetUsers = async (req, res) => {
   try {
-    // const users = await User.findAll()
-
     const users = await User.findAll({
       include: [
         {
