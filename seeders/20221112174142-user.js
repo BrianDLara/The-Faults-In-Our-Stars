@@ -79,6 +79,7 @@ module.exports = {
           phoneNumber: falso.randPhoneNumber(),
           gender: falso.randGender(),
           zodiacId: zodiac.id,
+          createdAt: new Date(),
           updatedAt: new Date()
         }
       })
