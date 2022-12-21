@@ -40,7 +40,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       createdAt: {
-        allowNull: true,
+        allowNull: false,
+        defaultValue: new Date(),
         type: Sequelize.DATE
       },
       updatedAt: {
