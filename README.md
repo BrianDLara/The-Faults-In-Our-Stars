@@ -65,11 +65,6 @@
   - Sequilize
   - PostgreSQL
 
-- Editing Software
-
-  - gimp (image editor)
-  - screen cast (screen recorder)
-
 ---
 
 ### **_Getting Started_**
