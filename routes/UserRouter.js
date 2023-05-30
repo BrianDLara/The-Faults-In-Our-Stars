@@ -26,14 +26,14 @@ router.post('/zodiac_id/:zodiac_id/new_user', controller.CreateUser)
 // update a review
 router.put(
   '/:user_id',
-  //   middleware.stripToken,
-  //   middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.UpdateUser
 )
 router.delete(
   '/:id',
-  //   middleware.stripToken,
-  //   middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.DeleteUser
 )
 

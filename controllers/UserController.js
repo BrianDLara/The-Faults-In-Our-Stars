@@ -4,8 +4,6 @@ const { Op } = require('sequelize')
 
 const GetUsers = async (req, res) => {
   try {
-    // const users = await User.findAll()
-
     const users = await User.findAll({
       include: [
         {
@@ -21,22 +19,6 @@ const GetUsers = async (req, res) => {
     throw error
   }
 }
-
-// const GetUsers = async (req, res) => {
-//   try {
-//     // const users = await User.findAll()
-
-//     const users = await User.findAll({
-//       include: Zodiac,
-//       raw: true,
-//       nest: true
-//     })
-
-//     res.send(users)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 const GetUserById = async (req, res) => {
   try {
@@ -177,19 +159,6 @@ const UpdatePassword = async (req, res) => {
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {}
 }
-
-// const DeleteUser = async (req, res) => {
-//   try {
-//     let userId = parseInt(req.params.user_id)
-//     let deletedUser = await User.destroy(req.body, {
-//       where: { id: userId },
-//       returning: true
-//     })
-//     res.send(deletedUser)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 module.exports = {
   GetUsers,
